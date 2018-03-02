@@ -1,0 +1,26 @@
+<h1>Books</h1>
+<br />
+
+<!-- Added navbar to switch between list view shown in video and new edit view -->
+<div class="navbar">
+    <ul class="nav navbar-nav">
+        <li class="toolbar-item">
+            <a (click)="editViewEnabled=false" [class.active]="!editViewEnabled">
+                <span class="glyphicon glyphicon-align-justify"></span> List View
+            </a>
+        </li>
+        <li class="toolbar-item">
+            <a (click)="editViewEnabled=true" [class.active]="editViewEnabled">
+                <span class="glyphicon glyphicon-pencil"></span> Edit View
+            </a>
+        </li>
+    </ul>
+</div>
+
+<ul>
+    <li *ngFor="let book of books">
+        {{ book.id }} {{ book.name }}
+    </li>
+</ul>
+
+<!-- Added editable list to demonstrate doing an HTTP PUT -->
