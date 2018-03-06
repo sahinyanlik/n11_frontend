@@ -48,8 +48,7 @@ export class BooksComponent implements OnInit {
     saveBook(book: IBook) {
         console.log(book);
         this.dataService.saveBook(book)
-            .subscribe((data: IBook) => this.selected = data, function () { this.getBooks(); });
-
+            .subscribe((data: IBook) => this.selected = data);
         this.getBooks();
     }
 
